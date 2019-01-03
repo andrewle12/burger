@@ -1,0 +1,27 @@
+body{
+    background-image: url("https://freefrontend.com/assets/img/css-background-patterns/css-dot-pattern-grid-background.png");
+}
+
+h1{
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
+.available{
+    color: blue;
+}
+
+.devoured{
+    color: red;
+}
+
+.input-group{
+    width: 100%;
+}
+
+.add{
+    color: blue;
+}

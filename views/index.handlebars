@@ -1,33 +1,46 @@
-<h1>Burgers</h1>
+<div class="row">
+    <center>
+        {{!-- Available burgers --}}
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <h3 class="available">Burgers Available</h3>
+            <div>
 
-<h2>Burgers available for eating</h2>
+                {{!-- Add burgers to list with Handlebars --}}
+                {{#each burgers}}
+                {{#unless devoured}}
+                <form action="burger/eat/{{id}}" method="POST">
+                    <div class="input-group">
+                        <li class="form-control">{{id}}.{{burger_name}}</li>
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="submit">Chomp!</button>
+                        </span>
+                    </div>
+                </form>
+                {{/unless}}
+                {{/each}}
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+            </div>
+        </div>
 
-<h2>Burgers devoured</h2>
+        <div class="col-md-1"></div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+        {{!-- Burgers eaten --}}
+        <div class="col-md-3">
+            <h3 class="devoured">Burgers Devoured</h3>
+            <div>
+                {{!-- Move eaten burgers --}}
+                {{#each burgers}}
+                {{#if this.devoured}}
+                <div class="input-group">
+                    <li class="form-control">{{this.id}}.{{this.burger_name}}</li>
+                </div>
+                {{/if}}
+                {{/each}}
 
-<h2>Add a burger</h2>
-<form class="create-form">
+            </div>
 
-  <div class="form-group">
-    <label for="burger">New Burger:</label>
-    <input type="text" id="burger" name="name">
-  </div>
+        </div>
 
-
-  <button type="submit">Add New Burger</button>
-</form>
+    </center>
+</div>

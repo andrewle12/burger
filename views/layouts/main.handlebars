@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
-		<title>Burgers!</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+    <title>Burger Express!</title>
+
+    <link rel="icon" href="assets/img/burger.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/burger_style.css">
+</head> 
+
+
+
+<body>
+    <div class="container-fluid">
+        <center>
+            <div class="row">
+                <img src="assets/img/burger.png" alt="Burger Img">
+                <h1>Burger Express! ;)</h1>
+                <h2>Eat the available burgers on the left or add your own!
+                </h2>
+        </center>
+        <br>
+
+        {{!-- index.handlebars --}}
+        {{{body}}}
+
+        <br><br>
+
+        {{!-- Adding a new burger --}}
+        <form action="burger/add" method="POST">
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="form-group col-md-4">
+                    <center><label for="new_burger" class="add" id="submit_button">Add a new burger!</label></center>
+                    <textarea class="form-control" type="text" columns="4" rows="1" id="new_burger required value="" name="
+                        burger_name"></textarea>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            
+            {{!-- Submit button --}}
+            <center>
+                <button id="submit-button" type="submit" class="btn btn-info">Add burger!</button>
+            </center>
+        </form>
+        <br>
+    </div>
+</body>
+
 </html>
