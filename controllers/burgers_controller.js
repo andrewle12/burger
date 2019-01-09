@@ -18,6 +18,11 @@ router.get("/index", function(req, res) {
   });
 });
 
+router.get("/", function(req, res){
+  res.render("/index");
+})
+
+
 //adding a burger
 router.post("/burger/add", function(req, res) {
   burger.insertOne(req.body.burger_name, function() {
