@@ -19,7 +19,7 @@ router.get("/index", function(req, res) {
 });
 
 router.get("/", function(req, res){
-  res.render("/index");
+  res.render("index");
 })
 
 
